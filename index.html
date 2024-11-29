@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Botón Condicional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF0F0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FF4C4C;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #FF4C4C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #D43B3B;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Hola Amor!</h1>
+    <div class="button-container">
+        <button id="openButton" class="button hidden" onclick="redirectToURL()">Haz clic aquí</button>
+    </div>
+    <div class="message" id="message">El botón estará disponible el 29 de noviembre de 2024 a las 00:01 AM</div>
+
+    <script>
+        // Fecha y hora objetivo: 29 de noviembre de 2024 a las 00:01 AM
+        const targetDate = new Date('2024-11-29T00:01:00');
+
+        // Obtener la fecha y hora actual
+        const currentDate = new Date();
+
+        // Si la fecha y hora actual son mayores o iguales a la fecha objetivo, mostrar el botón
+        if (currentDate >= targetDate) {
+            document.getElementById('openButton').classList.remove('hidden');
+            document.getElementById('message').innerText = '¡El botón está disponible! Haz clic en el botón ahora.';
+        }
+
+        // Función que redirige al hacer clic en el botón
+        function redirectToURL() {
+            // URL a la que se redirige
+            window.location.href = 'https://eloyalva.github.io/5MES/';  // Cambia esta URL por la que desees
+        }
+    </script>
+</body>
+</html>
